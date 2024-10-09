@@ -11,11 +11,16 @@ export class ProductService {
   }
 
   async findAll() {
-    return await this.prismaService.product.findMany();
+    return await this.prismaService.product.findMany({
+      include: { images: true },
+    });
   }
 
   async findOne(id: number) {
-    return await this.prismaService.product.findUnique({ where: { id } });
+    return await this.prismaService.product.findUnique({
+      where: { id },
+      include: { images: true },
+    });
   }
 
   async update(id: number, updateProductDto: UpdateProductDto) {
