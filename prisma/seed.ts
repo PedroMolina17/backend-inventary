@@ -5,14 +5,14 @@ const prisma = new PrismaClient();
 async function main() {
   const user1 = await prisma.user.create({
     data: {
-      email: 'admin@hotel.com',
-      password: 'adminpassword123',
+      email: 'Jairojhezerfloresore@gmail.com',
+      password: '12345',
     },
   });
 
   const user2 = await prisma.user.create({
     data: {
-      email: 'user@hotel.com',
+      email: 'uservafwfwfwffwa@hotel.com',
       password: 'userpassword123',
     },
   });
