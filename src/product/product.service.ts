@@ -16,9 +16,23 @@ export class ProductService {
     });
   }
 
+  async findLowStockProducts() {
+    return await this.prismaService.product.count({
+      where: {
+        stock: {
+          lt: 100,
+        },
+      },
+    });
+  }
+
+  async countAll() {
+    return await this.prismaService.product.count();
+  }
+
   async findOne(id: number) {
     return await this.prismaService.product.findUnique({
-      where: { id },
+      where: { id: id },
       include: { images: true },
     });
   }

@@ -25,6 +25,16 @@ export class ProductController {
     return this.productService.findAll();
   }
 
+  @Get('low-stock')
+  findLowStockProducts() {
+    return this.productService.findLowStockProducts();
+  }
+
+  @Get('count')
+  countAll() {
+    return this.productService.countAll();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.productService.findOne(+id);

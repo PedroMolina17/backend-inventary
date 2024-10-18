@@ -14,6 +14,10 @@ export class UsersService {
     return await this.prismaservice.user.findMany();
   }
 
+  async countAll() {
+    return await this.prismaservice.user.count();
+  }
+
   async findOne(id: number) {
     return await this.prismaservice.user.findUnique({ where: { id } });
   }

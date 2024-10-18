@@ -25,6 +25,11 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
+  @Get('count')
+  countAll() {
+    return this.usersService.countAll();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(+id);
